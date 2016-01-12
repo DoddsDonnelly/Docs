@@ -80,7 +80,7 @@ In the sample code associated with this article, a ``RedisCache`` implementation
 .. note:: To install Redis on your local machine, install the chocolatey package http://chocolatey.org/packages/redis-64/ and run ``redis-server`` from a command prompt.
 
 Using a SQL Server Distributed Cache
--------------------------------
+------------------------------------
 The `SqlServerCache <https://github.com/aspnet/Caching/tree/1.0.0-rc1/src/Microsoft.Extensions.Caching.SqlServer>`_ implementation allows the distributed cache to use a SQL Server database as its backing store. The installation script installs a table with whatever name you configure and the following schema:
 
 .. image:: dist-cache/_static/SqlServerCacheTable.png
