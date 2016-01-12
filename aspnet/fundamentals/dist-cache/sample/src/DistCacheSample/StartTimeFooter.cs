@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Extensions.Caching.Distributed;
@@ -26,14 +23,6 @@ namespace DistCacheSample
         public async Task Invoke(HttpContext httpContext)
         {
             await _next.Invoke(httpContext);
-
-            var foo = new SqlServerCache(new CacheOptions(new SqlServerCacheOptions()
-            {
-                ConnectionString = @"Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;",
-                SchemaName = "dbo",
-                TableName = "TestCache"
-            }));
-
 
             string startTimeString = "Not found.";
             var value = await _cache.GetAsync("serverStartTime");

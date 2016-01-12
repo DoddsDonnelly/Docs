@@ -64,7 +64,6 @@ namespace DistCacheSample
             byte[] val = Encoding.UTF8.GetBytes(serverStartTimeString);
 
             var cache = app.ApplicationServices.GetService(typeof(IDistributedCache)) as IDistributedCache;
-            //var cache = new LocalCache(new MemoryCache(new MemoryCacheOptions()));
             cache.Set("serverStartTime", val);
 
 
